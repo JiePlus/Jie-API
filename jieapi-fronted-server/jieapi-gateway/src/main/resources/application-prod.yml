@@ -1,0 +1,31 @@
+server:
+  port: 8091
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: api_route
+          uri: http://localhost:8123
+          predicates:
+            - Path=/api/**
+        - id: ton_yi_route
+          uri: http://localhost:8124
+          predicates:
+            - Path=/tonyi/**
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        cloud:
+#          gateway: trace
+
+dubbo:
+  application:
+    name: dubbo-springboot-demo-provider
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    id: nacos-registry
+    address: nacos://47.108.174.14:8848

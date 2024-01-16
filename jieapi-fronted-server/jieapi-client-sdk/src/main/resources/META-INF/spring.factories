@@ -1,0 +1,2 @@
+#spring boot starter
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.jie1234.jieapiclientsdk.JieApiClientConfig
